@@ -520,7 +520,7 @@ const WelcomeModal = () => {
                       storageKey={`welcome-themes-${themeSet.name.toLowerCase().replace(/\s+/g, '-')}`}
                       className='gap-3'
                     >
-                      <div className='grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4'>
+                      <div className='grid grid-cols-2 gap-3 p-1 sm:grid-cols-3 md:grid-cols-4'>
                         {filteredThemes.map(theme => {
                           const isChaosTheme = theme.id === '?';
                           const isPremiumTheme = isPremiumThemeId(theme.id);
@@ -659,7 +659,7 @@ const WelcomeModal = () => {
                 storageKey='welcome-fonts-recommended'
                 className='gap-3'
               >
-                <div className='grid grid-cols-1 gap-4 sm:grid-cols-2'>
+                <div className='grid grid-cols-1 gap-4 p-1 sm:grid-cols-2'>
                   {recommendedFonts.map(fontObj => (
                     <button
                       key={fontObj.name}
@@ -706,7 +706,7 @@ const WelcomeModal = () => {
                 storageKey='welcome-fonts-other'
                 className='gap-3'
               >
-                <div className='grid grid-cols-1 gap-4 sm:grid-cols-2'>
+                <div className='grid grid-cols-1 gap-4 p-1 sm:grid-cols-2'>
                   {otherFonts.map(fontObj => (
                     <button
                       key={fontObj.name}
@@ -790,7 +790,7 @@ const WelcomeModal = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className='fixed inset-0 z-[9999] flex items-center justify-center overscroll-none bg-black/40 p-2 backdrop-blur-sm sm:p-4'
+        className='fixed inset-0 z-[9999] flex items-center justify-center overscroll-none bg-black/40 p-1 backdrop-blur-sm sm:p-4'
         onClick={e => {
           if (e.target === e.currentTarget) {
             handleClose();
@@ -805,15 +805,15 @@ const WelcomeModal = () => {
           animate={{ scale: 1, opacity: 1, y: 0 }}
           exit={{ scale: 0.9, opacity: 0, y: 20 }}
           className={clsx(
-            'flex max-h-[85vh] w-full flex-col overflow-hidden md:w-4/5 lg:w-3/5',
-            'm-3 rounded-2xl bg-(--card-color)',
+            'flex max-h-[90vh] w-full flex-col overflow-hidden md:w-4/5 lg:w-3/5',
+            'm-1.5 rounded-2xl bg-(--card-color)',
             'shadow-2xl shadow-black/20',
             cardBorderStyles,
           )}
           onClick={e => e.stopPropagation()}
         >
           {/* Header */}
-          <div className='sticky top-0 z-10 border-b border-(--border-color)/30 bg-(--card-color) p-3 sm:p-5'>
+          <div className='sticky top-0 z-10 border-b border-(--border-color)/30 bg-(--card-color) p-2 sm:p-5'>
             <div className='flex items-center justify-between'>
               <div className='flex items-center gap-2'>
                 <div
@@ -860,7 +860,7 @@ const WelcomeModal = () => {
           <div
             ref={contentRef}
             className={clsx(
-              'min-h-0 p-3 pb-2 sm:p-5',
+              'min-h-0 p-2 pb-2 sm:p-5',
               step === 'welcome' ? 'overflow-y-auto' : 'overflow-hidden',
             )}
           >
@@ -868,7 +868,7 @@ const WelcomeModal = () => {
           </div>
 
           {/* Actions */}
-          <div className='sticky bottom-0 border-t border-(--border-color)/30 bg-(--card-color) p-3 pt-3 sm:p-5'>
+          <div className='sticky bottom-0 border-t border-(--border-color)/30 bg-(--card-color) p-2 pt-2 sm:p-5'>
             <div className='flex items-center justify-between'>
               {step !== 'welcome' ? (
                 <button
